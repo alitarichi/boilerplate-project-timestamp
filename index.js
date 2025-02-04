@@ -32,7 +32,7 @@ var listener = app.listen(process.env.PORT || 3000, function () {
 app.get("/api/:date?", (req, res) => {
   const dateParam = req.params.date;
   let dateObject;
-  if (!dateObject) {
+  if (!dateParam) {
     dateObject = new Date();
   } else if (/\d{5,}/.test(dateParam)) {
     dateObject = new Date(parseInt(dateParam));
